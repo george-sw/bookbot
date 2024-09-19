@@ -3,7 +3,6 @@ def main():
   book_word_count = get_book_word_count(book_text)
   book_character_counts = get_book_character_counts(book_text)
   book_character_list = get_book_character_list(book_character_counts)
-  print(book_character_list)
 
 def get_book_text(file_path):
   with open(file_path) as file:
@@ -30,6 +29,9 @@ def get_book_character_list(character_dict):
     if (character.isalpha()):
       book_character_list.append({"character": character, "count": character_dict[character]})
   return book_character_list
+
+def get_count(character_dict):
+  return character_dict["count"]
 
 if (__name__ == "__main__"):
   main()
