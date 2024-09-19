@@ -2,7 +2,8 @@ def main():
   book_text = get_book_text("./books/frankenstein.txt")
   book_word_count = get_book_word_count(book_text)
   book_character_counts = get_book_character_counts(book_text)
-  print(book_character_counts)
+  book_character_list = get_book_character_list(book_character_counts)
+  print(book_character_list)
 
 def get_book_text(file_path):
   with open(file_path) as file:
@@ -22,6 +23,13 @@ def get_book_character_counts(book_text):
       else:
         book_character_dict[character] += 1
   return book_character_dict
+
+def get_book_character_list(character_dict):
+  book_character_list = []
+  for character in character_dict:
+    if (character.isalpha()):
+      book_character_list.append({"character": character, "count": character_dict[character]})
+  return book_character_list
 
 if (__name__ == "__main__"):
   main()
