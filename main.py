@@ -6,7 +6,6 @@ def main():
   book_character_list = get_book_character_list(book_character_counts)
   book_character_list.sort(key=get_count, reverse=True)
 
-  # begin report
   print(f"--- Begin report of {book_path} ---")
   print(f"{book_word_count} words found in document\n")
   for i in range(0, len(book_character_list)):
@@ -14,7 +13,6 @@ def main():
     count = book_character_list[i]["count"]
     print(f"The '{character}' character was found {count} times")
   print("\n--- End report ---")
-  # end report
 
 def get_book_text(file_path):
   with open(file_path) as file:
